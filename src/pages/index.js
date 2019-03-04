@@ -74,7 +74,7 @@ class Main extends React.Component {
                 let nameEng = `${nameEngTemp[1].toUpperCase()} ${nameEngTemp[0].toUpperCase()}`
                 return (
                   <Main.Member key={m.id} href={m.dTV10thLink} target="_blank">
-                    <img src={m.photo} />
+                    <img src={m.photo} alt={`${nameEng}`} />
                     <h5>{m.name}</h5>
                     <h6>{nameEng}</h6>
                   </Main.Member>
@@ -115,6 +115,9 @@ class Main extends React.Component {
     cursor: pointer;
 
     & > img {
+      width: 120px;
+      height: 150px;
+      background: #d0d0d0;
       display: block;
     }
 
