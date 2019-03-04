@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import PageWrapper from '../components/page-wrapper'
 import globalBg from '../../assets/img/global-bg.jpg'
+import teams from '../../content/teams.json'
 
 class HomePage extends React.Component {
   render() {
@@ -10,6 +11,8 @@ class HomePage extends React.Component {
       <Wrapper>
         <Container>
           <Header />
+
+          <Main />
 
           <Footer />
         </Container>
@@ -53,6 +56,79 @@ class Header extends React.Component {
       justify-content: center;
       align-items: center;
       color: white;
+    }
+  `
+}
+
+class Main extends React.Component {
+  render() {
+    return (
+      <Main.Wrapper>
+        {teams.map(t => (
+          <Main.Team>
+            <h4>{`TEAM ${t.id.toUpperCase()}`}</h4>
+
+            <div>
+              {t.members.map(m => {
+                let nameEngTemp = m.id.split('_')
+                let nameEng = `${nameEngTemp[1].toUpperCase()} ${nameEngTemp[0].toUpperCase()}`
+                return (
+                  <Main.Member href={m.dTV10thLink} target="_blank">
+                    <img src={m.photo} />
+                    <h5>{m.name}</h5>
+                    <h6>{nameEng}</h6>
+                  </Main.Member>
+                )
+              })}
+              <Main.Member style={{ marginBottom: 0 }} />
+              <Main.Member style={{ marginBottom: 0 }} />
+              <Main.Member style={{ marginBottom: 0 }} />
+              <Main.Member style={{ marginBottom: 0 }} />
+            </div>
+          </Main.Team>
+        ))}
+      </Main.Wrapper>
+    )
+  }
+
+  static Wrapper = styled.main``
+
+  static Team = styled.div`
+    & > h4 {
+      margin-bottom: 15px;
+      padding: 5px;
+      background: #f8b500;
+      color: #fff;
+    }
+
+    & > div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  `
+
+  static Member = styled.a`
+    width: 120px;
+    margin: 0 7.5px 30px;
+    text-decoration: none;
+    cursor: pointer;
+
+    & > img {
+      display: block;
+    }
+
+    & > h5 {
+      padding: 5px;
+      border-bottom: solid 1px #eee;
+      color: #e57e16;
+      text-align: center;
+    }
+
+    & > h6 {
+      padding: 2px;
+      color: #ccc;
+      text-align: center;
     }
   `
 }
