@@ -65,7 +65,7 @@ class Main extends React.Component {
     return (
       <Main.Wrapper>
         {teams.map(t => (
-          <Main.Team>
+          <Main.Team key={t.id}>
             <h4>{`TEAM ${t.id.toUpperCase()}`}</h4>
 
             <div>
@@ -73,7 +73,7 @@ class Main extends React.Component {
                 let nameEngTemp = m.id.split('_')
                 let nameEng = `${nameEngTemp[1].toUpperCase()} ${nameEngTemp[0].toUpperCase()}`
                 return (
-                  <Main.Member href={m.dTV10thLink} target="_blank">
+                  <Main.Member key={m.id} href={m.dTV10thLink} target="_blank">
                     <img src={m.photo} />
                     <h5>{m.name}</h5>
                     <h6>{nameEng}</h6>
