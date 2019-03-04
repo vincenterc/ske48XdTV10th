@@ -1,1 +1,3 @@
-# ske48XdTV10th
+# SKE48XdTV 10th
+
+link: https://vincenterc.github.io/ske48XdTV10th/
