@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import PageWrapper from '../components/page-wrapper'
 import globalBg from '../../assets/img/global-bg.jpg'
-import teams from '../../content/teams.json'
+import teams from '../../contents/teams.json'
 
 class HomePage extends React.Component {
   render() {
