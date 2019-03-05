@@ -133,6 +133,10 @@ class Main extends React.Component {
       color: #ccc;
       text-align: center;
     }
+
+    &:hover {
+      opacity: 0.8;
+    }
   `
 }
 
