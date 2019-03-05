@@ -66,7 +66,7 @@ class Main extends React.Component {
       <Main.Wrapper>
         {teams.map(t => (
           <Main.Team key={t.id}>
-            <h4>{`TEAM ${t.id.toUpperCase()}`}</h4>
+            <h4>{`TEAM ${t.name.toUpperCase()}`}</h4>
 
             <div>
               {t.members.map(m => {
